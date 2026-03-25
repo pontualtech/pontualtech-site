@@ -299,3 +299,74 @@
     track.appendChild(clone);
   });
 })();
+
+// === Analytics Event Tracking ===
+(function() {
+  // Initialize dataLayer
+  window.dataLayer = window.dataLayer || [];
+
+  // Track ALL WhatsApp link clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href*="wa.me"]');
+    if (link) {
+      window.dataLayer.push({
+        'event': 'whatsapp_click',
+        'event_category': 'contact',
+        'event_label': link.getAttribute('href'),
+        'event_location': link.closest('section')?.id || link.className || 'unknown'
+      });
+    }
+  });
+
+  // Track phone number clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[href^="tel:"]');
+    if (link) {
+      window.dataLayer.push({
+        'event': 'phone_click',
+        'event_category': 'contact',
+        'event_label': link.getAttribute('href')
+      });
+    }
+  });
+
+  // Track form submissions
+  var form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      window.dataLayer.push({
+        'event': 'form_submit',
+        'event_category': 'contact',
+        'event_label': 'contact_form'
+      });
+    });
+  }
+
+  // Track scroll depth (25%, 50%, 75%, 100%)
+  var scrollMarks = {25: false, 50: false, 75: false, 100: false};
+  window.addEventListener('scroll', function() {
+    var scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 100].forEach(function(mark) {
+      if (scrollPercent >= mark && !scrollMarks[mark]) {
+        scrollMarks[mark] = true;
+        window.dataLayer.push({
+          'event': 'scroll_depth',
+          'event_category': 'engagement',
+          'event_label': mark + '%'
+        });
+      }
+    });
+  });
+
+  // Track outbound link clicks
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a[target="_blank"]');
+    if (link && !link.href.includes('wa.me')) {
+      window.dataLayer.push({
+        'event': 'outbound_click',
+        'event_category': 'engagement',
+        'event_label': link.getAttribute('href')
+      });
+    }
+  });
+})();
