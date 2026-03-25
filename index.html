@@ -21,9 +21,19 @@
   <meta name="twitter:title"       content="PontualTech — Conserto de Impressoras SP">
   <meta name="twitter:description" content="Diagnóstico gratuito, atendimento em 24h. Vila Mariana, São Paulo.">
 
+  <!-- Geo Meta Tags -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Vila Mariana, São Paulo">
+  <meta name="geo.position" content="-23.5872;-46.6368">
+  <meta name="ICBM" content="-23.5872, -46.6368">
+  <meta name="author" content="PontualTech Assistência Técnica">
+  <meta name="revisit-after" content="7 days">
+  <meta name="language" content="pt-BR">
+
   <!-- Fonts — preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://formsubmit.co">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Critical CSS inline -->
@@ -139,6 +149,73 @@
         ]
       }
     ]
+  }
+  </script>
+
+  <!-- JSON-LD: Organization with ContactPoint -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://pontualtech.net/#organization",
+    "name": "PontualTech Assistência Técnica",
+    "url": "https://pontualtech.net",
+    "logo": "https://pontualtech.net/og-image.jpg",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-3136-0415",
+        "contactType": "customer service",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese",
+        "hoursAvailable": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+55-11-3136-0415",
+        "contactType": "technical support",
+        "contactOption": "TollFree",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Ouvidor Peleja, 660",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "04128-001",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://wa.me/551131360415"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://pontualtech.net/#website",
+    "name": "PontualTech Assistência Técnica",
+    "url": "https://pontualtech.net",
+    "description": "Assistência técnica especializada em impressoras em Vila Mariana, São Paulo.",
+    "inLanguage": "pt-BR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://pontualtech.net/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 </head>
@@ -516,6 +593,12 @@
             <span class="footer-contact-text">Seg–Sex 8h–18h<br>Sáb 8h–13h</span>
           </div>
         </div>
+      </div>
+
+      <div class="partner-network" style="text-align:center;padding:1rem 0;font-size:0.85rem;opacity:0.7;">
+        <p style="margin:0 0 0.5rem">Rede de Assistência Técnica:</p>
+        <a href="https://sosimpressora.com" target="_blank" rel="noopener" style="color:var(--color-primary,#00f0ff);">SOS Impressora</a> |
+        <a href="https://rcimpressoras.com" target="_blank" rel="noopener" style="color:var(--color-primary,#00f0ff);">RC Impressoras</a>
       </div>
 
       <div class="footer-bottom">

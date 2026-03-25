@@ -15,9 +15,19 @@
   <meta property="og:title"       content="Serviços de Manutenção | PontualTech SP">
   <meta property="og:description" content="Conserto, manutenção preventiva e atendimento domiciliar para impressoras em São Paulo. Garantia 90 dias.">
 
+  <!-- Geo Meta Tags -->
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Vila Mariana, São Paulo">
+  <meta name="geo.position" content="-23.5872;-46.6368">
+  <meta name="ICBM" content="-23.5872, -46.6368">
+  <meta name="author" content="PontualTech Assistência Técnica">
+  <meta name="revisit-after" content="7 days">
+  <meta name="language" content="pt-BR">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://formsubmit.co">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Critical CSS -->
@@ -46,6 +56,140 @@
     },
     "areaServed": "São Paulo, SP",
     "serviceType": ["Conserto de Impressoras", "Manutenção Preventiva", "Atendimento Domiciliar"]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Início",
+        "item": "https://pontualtech.net/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Serviços",
+        "item": "https://pontualtech.net/servicos.html"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Service — Conserto de Impressoras -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://pontualtech.net/servicos.html#conserto",
+    "name": "Conserto de Impressoras",
+    "url": "https://pontualtech.net/servicos.html#conserto",
+    "description": "Diagnóstico e reparo completo de qualquer defeito em impressoras: papel preso, cabeçotes entupidos, falhas elétricas e mais. Diagnóstico gratuito e garantia de 90 dias.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://pontualtech.net/#business",
+      "name": "PontualTech Assistência Técnica",
+      "telephone": "+55-11-3136-0415",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Ouvidor Peleja, 660",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "04128-001",
+        "addressCountry": "BR"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "São Paulo"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "description": "Diagnóstico gratuito"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Service — Especialistas Epson -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://pontualtech.net/servicos.html#epson",
+    "name": "Especialistas Epson",
+    "url": "https://pontualtech.net/servicos.html#epson",
+    "description": "Técnicos especializados em toda a linha Epson: EcoTank, L Series, WorkForce, Expression e SureColor. Reset de almofadas, limpeza de cabeçotes e configuração WiFi.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://pontualtech.net/#business",
+      "name": "PontualTech Assistência Técnica",
+      "telephone": "+55-11-3136-0415"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "São Paulo"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "Epson"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Service — Manutenção Preventiva -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://pontualtech.net/servicos.html#preventiva",
+    "name": "Manutenção Preventiva de Impressoras",
+    "url": "https://pontualtech.net/servicos.html#preventiva",
+    "description": "Revisões periódicas programadas: diagnóstico periódico, limpeza profissional, calibração e ajustes, atualização de firmware. Evite paradas inesperadas.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://pontualtech.net/#business",
+      "name": "PontualTech Assistência Técnica",
+      "telephone": "+55-11-3136-0415"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "São Paulo"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Service — Atendimento Domiciliar -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://pontualtech.net/servicos.html#domiciliar",
+    "name": "Atendimento Domiciliar para Impressoras",
+    "url": "https://pontualtech.net/servicos.html#domiciliar",
+    "description": "Técnico vai até sua casa ou escritório em Vila Mariana e toda São Paulo. Sem taxa de deslocamento. Agendamento pelo WhatsApp.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://pontualtech.net/#business",
+      "name": "PontualTech Assistência Técnica",
+      "telephone": "+55-11-3136-0415"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "São Paulo"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "description": "Sem taxa de deslocamento"
+    }
   }
   </script>
 </head>
@@ -402,6 +546,12 @@
           </div>
         </div>
       </div>
+      <div class="partner-network" style="text-align:center;padding:1rem 0;font-size:0.85rem;opacity:0.7;">
+        <p style="margin:0 0 0.5rem">Rede de Assistência Técnica:</p>
+        <a href="https://sosimpressora.com" target="_blank" rel="noopener" style="color:var(--color-primary,#00f0ff);">SOS Impressora</a> |
+        <a href="https://rcimpressoras.com" target="_blank" rel="noopener" style="color:var(--color-primary,#00f0ff);">RC Impressoras</a>
+      </div>
+
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 <span>PontualTech</span>. Todos os direitos reservados.</p>
         <p class="footer-copy"><span class="mono">Vila Mariana · São Paulo · SP</span></p>
