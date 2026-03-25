@@ -226,37 +226,33 @@
 })();
 
 /* ============================================================
-   6. Contact form — client-side validation + WA redirect
+   6. Contact form — client-side validation + Formsubmit.co
    ============================================================ */
 (function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  const WA_NUMBER = '551131360415';
+  // Show success message if redirected back with ?enviado=1
+  if (new URLSearchParams(window.location.search).get('enviado') === '1') {
+    const successEl = document.getElementById('form-success');
+    if (successEl) {
+      successEl.style.display = 'block';
+      // Scroll the success message into view
+      successEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
 
   form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name    = form.querySelector('[name="name"]')?.value.trim()    || '';
-    const phone   = form.querySelector('[name="phone"]')?.value.trim()   || '';
-    const service = form.querySelector('[name="service"]')?.value        || '';
-    const message = form.querySelector('[name="message"]')?.value.trim() || '';
+    const name  = form.querySelector('[name="name"]')?.value.trim()  || '';
+    const phone = form.querySelector('[name="phone"]')?.value.trim() || '';
 
     if (!name || !phone) {
+      e.preventDefault();
       showFormError(form, 'Preencha pelo menos nome e telefone.');
       return;
     }
 
-    // Build WhatsApp message
-    const lines = [
-      `Olá, PontualTech! Meu nome é *${name}*.`,
-      service  ? `Serviço: *${service}*` : '',
-      message  ? `Mensagem: ${message}` : '',
-      `Contato: ${phone}`,
-    ].filter(Boolean).join('\n');
-
-    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines)}`;
-    window.open(url, '_blank');
+    // Validation passed — let the form submit naturally to Formsubmit.co
   });
 
   function showFormError(form, msg) {
