@@ -1,6 +1,110 @@
+# robots.txt — PontualTech
+# Última atualização: 2026-04-30
+# Permite todos os crawlers de busca e LLMs/IAs.
+
+# ========== MOTORES DE BUSCA TRADICIONAIS ==========
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ========== AI / LLM CRAWLERS ==========
+# Permite o site aparecer em respostas de IAs (Perplexity, ChatGPT, Claude, Gemini, Copilot)
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Kagibot
+Allow: /
+
+# ========== FALLBACK ==========
 User-agent: *
 Allow: /
 
+# ========== SITEMAPS ==========
 Sitemap: https://pontualtech.net/sitemap.xml
-
-# Disallow admin or private paths (none currently)

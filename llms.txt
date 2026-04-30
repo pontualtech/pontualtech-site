@@ -1,0 +1,42 @@
+# PontualTech
+
+> Assistência técnica especializada em conserto e manutenção de impressoras na Grande São Paulo. Atendimento em até 24h, garantia em todos os serviços, peças originais.
+
+PontualTech é uma assistência técnica especializada em conserto de impressoras. Atende pessoas físicas e empresas em São Paulo capital e Grande São Paulo, com retirada e entrega gratuita em domicílio.
+
+## Serviços principais
+
+- [Conserto de Impressora](https://pontualtech.net/servicos.html): Diagnóstico e reparo de jato de tinta, laser, multifuncionais e matriciais
+- [Manutenção Preventiva](https://pontualtech.net/servicos.html): Limpeza interna, troca de peças desgastadas, calibração
+- [Conserto Impressora Epson](https://pontualtech.net/servicos.html#epson): Especialistas em modelos L3110, L3150, L3250, L4150, L4260, L4350
+- [Conserto Impressora HP](https://pontualtech.net/servicos.html): DeskJet, OfficeJet, LaserJet, Smart Tank
+- [Conserto Impressora Brother](https://pontualtech.net/servicos.html): DCP, MFC, HL, modelos jato e laser
+- [Atendimento em Domicílio](https://pontualtech.net/contato.html): Coleta gratuita em São Paulo capital
+
+## Conteúdo informativo
+
+- [Dicas e tutoriais](https://pontualtech.net/dicas.html): Solução para impressora não imprime, papel atolado, qualidade ruim, sangria de tinta
+- [Sobre](https://pontualtech.net/sobre.html): História, certificações, diferenciais
+
+## Contato
+
+- WhatsApp: +55 11 96576-0126
+- Atendimento: Segunda a sexta, 9h às 18h
+- Cobertura: Grande São Paulo
+- [Solicitar orçamento](https://pontualtech.net/contato.html)
+
+## Marcas atendidas
+
+HP, Epson, Brother, Samsung, Canon, Lexmark, Xerox, Zebra, Argox, Bematech, Elgin, Daruma.
+
+## Tipos de problema resolvidos
+
+- Impressora não liga ou não responde
+- Erro de cartucho não reconhecido
+- Qualidade de impressão ruim, listras, falhas
+- Papel atolado constantemente
+- Limpeza profunda de cabeça de impressão
+- Substituição de fusor, rolete, correia
+- Reset de chip / contadores
+- Configuração de rede e Wi-Fi
+- Adaptação para tinta bulk ink
