@@ -2,7 +2,13 @@
 <html lang="pt-BR">
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  <!-- GTM-INSTALL:BEGIN -->
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'denied',personalization_storage:'denied',security_storage:'granted',url_passthrough:true,ads_data_redaction:true,wait_for_update:500});
+</script>
+<!-- GTM-INSTALL:END -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -646,5 +652,31 @@
   </a>
 
   <script src="js/main.js" defer></script>
+<!-- LGPD-BANNER:BEGIN -->
+<style>
+.lgpd-banner{display:none;position:fixed;bottom:0;left:0;right:0;background:#0a0c0f;color:white;padding:16px 20px;z-index:9999;box-shadow:0 -4px 20px rgba(0,0,0,.2);font-family:'Inter',-apple-system,sans-serif}
+.lgpd-banner.show{display:block}
+.lgpd-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lgpd-text{font-size:13px;color:#c8cdd6;flex:1;min-width:200px;line-height:1.5}
+.lgpd-text a{color:#93c5fd;text-decoration:underline}
+.lgpd-btns{display:flex;gap:8px}
+.lgpd-btn{padding:10px 20px;border:none;border-radius:6px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+.lgpd-btn.accept{background:#059669;color:white}
+.lgpd-btn.essential{background:transparent;color:#c8cdd6;border:1px solid rgba(255,255,255,.3)}
+</style>
+<div class="lgpd-banner" id="lgpdBanner">
+  <div class="lgpd-inner">
+    <div class="lgpd-text">Utilizamos cookies para melhorar sua experiência. Ao continuar, você concorda com nossa <a href="/politica-privacidade.html" target="_blank" rel="noopener">política de privacidade</a>.</div>
+    <div class="lgpd-btns">
+      <button type="button" class="lgpd-btn accept" onclick="aceitarCookies('all')">Aceitar todos</button>
+      <button type="button" class="lgpd-btn essential" onclick="aceitarCookies('essential')">Apenas essenciais</button>
+    </div>
+  </div>
+</div>
+<script>
+function aceitarCookies(t){var c=t==='all'?{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted',functionality_storage:'granted',personalization_storage:'granted'}:{analytics_storage:'granted',functionality_storage:'granted'};if(window.gtag){gtag('consent','update',c);}try{localStorage.setItem('pt_consent_v2',JSON.stringify({tipo:t,ts:Date.now()}));}catch(e){}var b=document.getElementById('lgpdBanner');if(b){b.classList.remove('show');}document.body.style.paddingBottom='';}
+(function(){try{var s=localStorage.getItem('pt_consent_v2');if(s){aceitarCookies(JSON.parse(s).tipo);}else{var b=document.getElementById('lgpdBanner');if(b){b.classList.add('show');document.body.style.paddingBottom='80px';}}}catch(e){var b=document.getElementById('lgpdBanner');if(b){b.classList.add('show');}}})();
+</script>
+<!-- LGPD-BANNER:END -->
 </body>
 </html>
