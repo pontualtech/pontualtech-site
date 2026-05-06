@@ -48,6 +48,9 @@ Allow: /
 # ========== AI / LLM CRAWLERS ==========
 # Permite o site aparecer em respostas de IAs (Perplexity, ChatGPT, Claude, Gemini, Copilot)
 
+User-agent: CCBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 

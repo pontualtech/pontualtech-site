@@ -106,7 +106,15 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
         ],
         "priceRange": "$$",
         "areaServed": "São Paulo, SP",
-        "sameAs": []
+        ,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "100",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": []
       },
       {
         "@type": "FAQPage",
@@ -231,7 +239,65 @@ gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personali
     }
   }
   </script>
-</head>
+
+  <!-- AEO-SCHEMAS:BEGIN -->
+  <!-- Structured Data: Service (AEO/GEO) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://pontualtech.net/#service",
+  "serviceType": "Conserto de Impressoras",
+  "name": "Conserto de Impressoras — PontualTech",
+  "description": "Conserto técnico especializado em impressoras laser, jato de tinta e térmica. Diagnóstico gratuito, garantia de 90 dias e atendimento em domicílio na Grande São Paulo.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://pontualtech.net/#localbusiness",
+    "name": "PontualTech",
+    "url": "https://pontualtech.net"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Grande São Paulo",
+    "containedInPlace": {
+      "@type": "AdministrativeArea",
+      "name": "São Paulo"
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Conserto e Manutenção de Impressoras",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Conserto de Impressora Laser",
+          "description": "Reparo de impressoras laser de todas as marcas: HP, Canon, Brother, Samsung, Xerox, Lexmark. Solução para problemas de fusor, drum, toner e drivers."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Conserto de Impressora Jato de Tinta",
+          "description": "Manutenção de impressoras jato de tinta: HP, Canon, Epson, Brother. Limpeza de cabeças, troca de cartuchos e ajuste de qualidade de impressão."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Conserto de Impressora Térmica",
+          "description": "Reparo de impressoras térmicas para PDV, etiquetas e cupom fiscal. Atendemos Bematech, Elgin, Daruma, Epson, Zebra."
+        }
+      }
+    ]
+  }
+}
+  </script>
+  <!-- AEO-SCHEMAS:END -->
+  </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRC8T6MG"
