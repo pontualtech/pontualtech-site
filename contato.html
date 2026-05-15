@@ -34,7 +34,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://formsubmit.co">
+  <link rel="dns-prefetch" href="https://wa.me">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Critical CSS -->
@@ -246,11 +246,7 @@
             Preencha o formulário e redirecionamos para o WhatsApp com suas informações.
           </p>
 
-          <form class="contact-form" id="contact-form" action="https://formsubmit.co/contato@pontualtech.com.br" method="POST" novalidate aria-label="Formulário de contato">
-            <input type="hidden" name="_subject" value="Novo contato - PontualTech">
-            <input type="hidden" name="_next" value="https://pontualtech.net/contato.html?enviado=1">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
+          <form class="contact-form" id="contact-form" action="#" method="POST" novalidate aria-label="Formulário de contato" onsubmit="return enviarFormWhatsApp(event)">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Nome *</label>
@@ -431,5 +427,24 @@
   </a>
 
   <script src="js/main.js" defer></script>
+  <script>
+    // Form contato → WhatsApp direto (substitui formsubmit.co, fora do ar 15/05/2026)
+    function enviarFormWhatsApp(ev){
+      ev.preventDefault();
+      var f=ev.target;
+      function v(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';}
+      var nome=v('name'), tel=v('phone'), service=v('service'), brand=v('brand'), message=v('message');
+      if(!nome||!tel){alert('Preencha nome e telefone.');return false;}
+      var msg='Olá! Solicitação pelo site pontualtech.net:\n\n';
+      msg+='Nome: '+nome+'\n';
+      msg+='Telefone: '+tel+'\n';
+      if(service) msg+='Serviço: '+service+'\n';
+      if(brand) msg+='Marca: '+brand+'\n';
+      if(message) msg+='\nMensagem: '+message;
+      try{if(typeof gtag==='function'){gtag('event','generate_lead',{event_category:'contato_form_wa',value:1,currency:'BRL'});}}catch(e){}
+      window.open('https://wa.me/551131360415?text='+encodeURIComponent(msg),'_blank');
+      return false;
+    }
+  </script>
 </body>
 </html>
