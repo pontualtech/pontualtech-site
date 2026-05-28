@@ -744,5 +744,69 @@ function aceitarCookies(t){var c=t==='all'?{ad_storage:'granted',ad_user_data:'g
 (function(){try{var s=localStorage.getItem('pt_consent_v2');if(s){aceitarCookies(JSON.parse(s).tipo);}else{var b=document.getElementById('lgpdBanner');if(b){b.classList.add('show');document.body.style.paddingBottom='80px';}}}catch(e){var b=document.getElementById('lgpdBanner');if(b){b.classList.add('show');}}})();
 </script>
 <!-- LGPD-BANNER:END -->
+<!-- PT WhatsApp CWT inline (server-side fingerprint, substitui tag GTM bloqueada) -->
+<script>
+(function() {
+  function getCookie(name) {
+    var m = document.cookie.match('(?:^|; )' + name.replace(/[.$?*|{}()[\]\\\/+^]/g, '\\</body>') + '=([^;]+)');
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function isWhatsAppLink(url) {
+    return /^https?:\/\/(?:wa\.me|api\.whatsapp\.com|chat\.whatsapp\.com)/i.test(url);
+  }
+  function extractPhoneDest(url) {
+    try {
+      var u = new URL(url, location.origin);
+      if (/api\.whatsapp\.com|web\.whatsapp\.com/i.test(u.hostname)) {
+        var p = u.searchParams.get('phone');
+        if (p) return p.replace(/\D+/g, '');
+      }
+      var raw = (u.pathname || '').replace(/^\//, '').split('/')[0];
+      return raw ? raw.replace(/\D+/g, '') : '';
+    } catch (e) { return ''; }
+  }
+  function sendFingerprint(phoneDest) {
+    if (!phoneDest) return;
+    var gclid   = getCookie('_pt_last_gclid')     || getCookie('_pt_first_gclid');
+    var msclkid = getCookie('_pt_last_msclkid')   || getCookie('_pt_first_msclkid');
+    var fbclid  = getCookie('_pt_last_fbclid')    || getCookie('_pt_first_fbclid');
+    var liFatId = getCookie('_pt_last_li_fat_id') || getCookie('_pt_first_li_fat_id');
+    var twclid  = getCookie('_pt_last_twclid')    || getCookie('_pt_first_twclid');
+    var ttclid  = getCookie('_pt_last_ttclid')    || getCookie('_pt_first_ttclid');
+    var src  = getCookie('_pt_last_src')  || getCookie('_pt_first_src');
+    var med  = getCookie('_pt_last_med')  || getCookie('_pt_first_med');
+    var camp = getCookie('_pt_last_camp') || getCookie('_pt_first_camp');
+    var term = getCookie('_pt_last_term') || getCookie('_pt_first_term');
+    var payload = JSON.stringify({
+      phone_destination: phoneDest,
+      gclid: gclid || null, msclkid: msclkid || null,
+      fbclid: fbclid || null, li_fat_id: liFatId || null,
+      twclid: twclid || null, ttclid: ttclid || null,
+      utm_source: src || null, utm_medium: med || null,
+      utm_campaign: camp || null, utm_term: term || null,
+      page_url: location.href, referrer: document.referrer || null
+    });
+    try {
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon('https://erp.pontualtech.work/api/marketing/whatsapp-redirect',
+          new Blob([payload], { type: 'text/plain' }));
+      } else if (window.fetch) {
+        fetch('https://erp.pontualtech.work/api/marketing/whatsapp-redirect', {
+          method: 'POST', body: payload,
+          headers: {'Content-Type': 'application/json'},
+          keepalive: true, mode: 'cors', credentials: 'omit'
+        }).catch(function(){});
+      }
+    } catch (e) {}
+  }
+  document.addEventListener('click', function(e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href || !isWhatsAppLink(href)) return;
+    sendFingerprint(extractPhoneDest(href));
+  }, true);
+})();
+</script>
 </body>
 </html>
