@@ -748,7 +748,7 @@ function aceitarCookies(t){var c=t==='all'?{ad_storage:'granted',ad_user_data:'g
 <script>
 (function() {
   function getCookie(name) {
-    var m = document.cookie.match('(?:^|; )' + name.replace(/[.$?*|{}()[\]\\\/+^]/g, '\\</body>') + '=([^;]+)');
+    var m = document.cookie.match('(?:^|; )' + name.replace(/[.$?*|{}()[\]\\\/+^]/g, '\\$&') + '=([^;]+)');
     return m ? decodeURIComponent(m[1]) : null;
   }
   function isWhatsAppLink(url) {
@@ -767,6 +767,7 @@ function aceitarCookies(t){var c=t==='all'?{ad_storage:'granted',ad_user_data:'g
   }
   function sendFingerprint(phoneDest) {
     if (!phoneDest) return;
+    var eventId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : null;
     var gclid   = getCookie('_pt_last_gclid')     || getCookie('_pt_first_gclid');
     var msclkid = getCookie('_pt_last_msclkid')   || getCookie('_pt_first_msclkid');
     var fbclid  = getCookie('_pt_last_fbclid')    || getCookie('_pt_first_fbclid');
@@ -779,6 +780,7 @@ function aceitarCookies(t){var c=t==='all'?{ad_storage:'granted',ad_user_data:'g
     var term = getCookie('_pt_last_term') || getCookie('_pt_first_term');
     var payload = JSON.stringify({
       phone_destination: phoneDest,
+      event_id: eventId,
       gclid: gclid || null, msclkid: msclkid || null,
       fbclid: fbclid || null, li_fat_id: liFatId || null,
       twclid: twclid || null, ttclid: ttclid || null,
